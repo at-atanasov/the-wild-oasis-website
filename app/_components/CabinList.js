@@ -1,7 +1,10 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 import CabinCard from "./CabinCard";
 import { getCabins } from "../_lib/data-service";
 
 async function CabinList() {
+  noStore(); // do not cache this component, always fetch fresh data on each request
   const cabins = await getCabins();
 
   if (!cabins.length) return null;
