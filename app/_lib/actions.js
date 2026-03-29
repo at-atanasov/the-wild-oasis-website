@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { auth, signIn, signOut } from "./auth";
 import { supabase } from "./supabase";
 
@@ -26,6 +27,9 @@ export async function updateGuest(formData) {
   if (error) {
     throw new Error("Guest could not be updated");
   }
+
+  revalidatePath("/account/profile"); // Revalidate the profile page to show the updated data. Cache revalidation.
+  // revalidate("/account/profile");  // Revalidate the profile page to show the updated data. Cache revalidation.
 }
 
 export async function signInAction() {
