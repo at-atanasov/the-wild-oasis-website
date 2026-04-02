@@ -69,6 +69,8 @@ export async function updateReservation(formData) {
 }
 
 export async function deleteReservation(bookingId) {
+  //await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate network delay
+
   const session = await auth();
   if (!session) throw new Error("You must be logged in.");
 
