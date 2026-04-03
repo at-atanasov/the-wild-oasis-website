@@ -1,4 +1,4 @@
-import ReservationList from "@/app/_components/reservationList";
+import ReservationList from "@/app/_components/ReservationList";
 import { auth } from "@/app/_lib/auth";
 import { getBookings } from "@/app/_lib/data-service";
 

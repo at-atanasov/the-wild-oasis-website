@@ -34,6 +34,40 @@ export async function updateGuest(formData) {
   // revalidate("/account/profile");  // Revalidate the profile page to show the updated data. Cache revalidation.
 }
 
+export async function createBooking(bookingData, formData) {
+  // bookingData is pre-bound in the ReservationForm component, formData comes from the form submission
+  const session = await auth();
+  if (!session) throw new Error("You must be logged in.");
+
+  const newBooking = {
+    ...bookingData,
+    guestId: session.user.guestId,
+    numGuests: Number(formData.get("numGuests")),
+    observations: formData.get("observations").slice(0, 1000), // Limit observations to 1000 characters to prevent abuse
+    extrasPrice: 0,
+    totalPrice: bookingData.cabinPrice,
+    isPaid: false,
+    hasBreakfast: false,
+    status: "unconfirmed",
+  };
+
+  const { data, error } = await supabase
+    .from("bookings")
+    .insert([newBooking])
+    // So that the newly created object gets returned! It will be returned to "data" and in this case we do not realy need it.
+    .select()
+    .single();
+
+  if (error) {
+    throw new Error("Booking could not be created");
+  }
+
+  console.log(data);
+
+  revalidatePath(`/account/cabins/${bookingData.cabinId}`);
+  redirect("/cabins/thankyou");
+}
+
 export async function updateReservation(formData) {
   const reservationId = Number(formData.get("reservationId"));
   const session = await auth();
