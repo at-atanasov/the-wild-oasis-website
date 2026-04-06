@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# The Wild Oasis Website
 
-## Getting Started
+**The Wild Oasis Website** is a modern hotel reservation platform where users can browse luxury cabins, view cabin details, authenticate with Google, make reservations, manage bookings, and update their profile — all built using Next.js and Supabase.
 
-First, run the development server:
+🎯 This repo contains the **customer-facing front-end** of the Wild Oasis project — a beautifully styled booking experience for guests of a fictional cabin retreat.
 
+---
+
+## 🚀 Features
+
+- 🏡 **Browse Cabins** – Responsive cabin listing with images and availability.
+- 📅 **Reservation System** – Users can select dates and book cabins.
+- 🔐 **Authentication** – Google login with secure session management (NextAuth.js).
+- 👤 **User Profile** – Guests can update their profile and view past/future reservations.
+- ✏️ **Manage Bookings** – Users can edit or cancel their reservations.
+- 📱 **Responsive UI** – Works on desktop and mobile.
+- ⚡ **Fast Performance** – Built with Next.js (App Router) and Tailwind CSS. :contentReference[oaicite:1]{index=1}
+
+---
+
+## 📦 Technology Stack
+
+| Layer | Technology |
+|-------|------------|
+| Frontend Framework | Next.js (App Router) |
+| Styling | Tailwind CSS |
+| Authentication | NextAuth.js (Google OAuth) |
+| Backend | Supabase (Database + Auth) |
+| UI Components | React & Utility Hooks |
+| Utils | date-fns, React Day Picker | :contentReference[oaicite:2]{index=2}
+
+---
+
+## 📁 Project Structure
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+/
+├─ app/ # Next.js App Router pages
+├─ public/ # Static assets
+├─ components/ # Reusable UI components
+├─ styles/ # Global and Tailwind config
+├─ .env.example # Sample environment variables
+├─ next.config.mjs # Next.js configuration
+├─ tailwind.config.js # Tailwind setup
+├─ package.json # Dependencies & scrip
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is open-source and available under the MIT License.
