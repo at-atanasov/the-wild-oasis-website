@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { auth } from "../_lib/auth";
 
-async function Navigation() {
+export default async function Navigation() {
   const session = await auth();
 
   return (
@@ -50,5 +50,3 @@ async function Navigation() {
     </nav>
   );
 }
-
-export default Navigation;
