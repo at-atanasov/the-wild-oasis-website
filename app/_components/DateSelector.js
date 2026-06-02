@@ -79,9 +79,9 @@ function DateSelector({ settings, bookedDates, cabin }) {
                 </span>
               </>
             ) : (
-              <span className="text-md sm:text-2xl">${regularPrice}</span>
+              <span className="text-2xl">${regularPrice}</span>
             )}
-            <span className="text-md sm:text-base">/night</span>
+            <span className="text-2xl sm:text-base">/night</span>
           </p>
           {numNights ? (
             <>
