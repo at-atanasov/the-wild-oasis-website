@@ -6,8 +6,8 @@ function CabinCard({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
 
   return (
-    <div className="flex border-primary-800 border">
-      <div className="flex-1 relative">
+    <div className="flex flex-col sm:flex-row border-primary-800 border">
+      <div className="sm:flex-1 relative h-64 sm:h-auto">
         <Image
           src={image}
           fill
@@ -16,7 +16,7 @@ function CabinCard({ cabin }) {
         />
       </div>
 
-      <div className="flex-grow">
+      <div className="sm:flex-grow">
         <div className="pt-5 pb-4 px-7 bg-primary-950">
           <h3 className="text-accent-500 font-semibold text-2xl mb-3">
             Cabin {name}
