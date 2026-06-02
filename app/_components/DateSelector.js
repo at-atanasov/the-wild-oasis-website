@@ -37,10 +37,8 @@ function DateSelector({ settings, bookedDates, cabin }) {
     const handleChange = (e) => setIsMobile(e.matches);
     media.addEventListener("change", handleChange);
     handleChange(media); // Set initial value
-
-    console.log("isMobile", isMobile);
     return () => media.removeEventListener("change", handleChange);
-  }, [isMobile]);
+  }, []);
 
   // SETTINGS
   const { minBookingLength, maxBookingLength } = settings;
